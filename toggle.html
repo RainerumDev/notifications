@@ -70,7 +70,7 @@
       const hasRequiredData = email && progetto && (stato === "on" || stato === "off");
 
       if (hasRequiredData) {
-        const action = stato === "on" ? "attivate" : "disattivate";
+        const action = stato === "on" ? "attivate 🔔" : "disattivate 🔕";
         messageElement.textContent = `Notifiche ${action} alla email ${email} per il progetto ${progetto}`;
       } else {
         messageElement.textContent = "Qualcosa è andato storto, riprova più tardi.";
