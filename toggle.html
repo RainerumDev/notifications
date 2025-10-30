@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <title>Stato notifiche</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 id="message">Caricamento...</h3>
+    <p id="countdown"></p>
+    <script>
+      // Read query parameters from the URL.
+      const params = new URLSearchParams(window.location.search);
+      const stato = params.get("stato");
+      const email = params.get("email");
+      const progetto = params.get("progetto");
+
+      const messageElement = document.getElementById("message");
+      const countdownElement = document.getElementById("countdown");
+
+      const hasRequiredData = email && progetto && (stato === "on" || stato === "off");
+
+      if (hasRequiredData) {
+        const action = stato === "on" ? "attivate" : "disattivate";
+        messageElement.textContent = `Notifiche ${action} alla email ${email} per il progetto ${progetto}`;
+      } else {
+        messageElement.textContent = "Qualcosa è andato storto, riprova più tardi.";
+      }
+
+      let remainingSeconds = 5;
+      const updateCountdown = () => {
+        if (!countdownElement) {
+          return;
+        }
+        countdownElement.textContent = `La finestra si chiuderà automaticamente tra ${remainingSeconds} secondi.`;
+      };
+
+      const closeMessage = () => {
+        countdownElement.textContent = "Ops, non riesco a chiudere la finestra automaticamente... Fail";
+      };
+
+      updateCountdown();
+      const intervalId = setInterval(() => {
+        remainingSeconds -= 1;
+        if (remainingSeconds <= 0) {
+          clearInterval(intervalId);
+          window.close();
+          closeMessage();
+          return;
+        }
+        updateCountdown();
+      }, 1000);
+    </script>
+  </body>
+</html>
