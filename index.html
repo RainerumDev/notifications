@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestione notifiche progetti</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+        line-height: 1.6;
+        color: #111;
+      }
+      h1,
+      h2 {
+        color: #c1121f;
+      }
+      section {
+        margin-bottom: 2rem;
+      }
+      ul {
+        padding-left: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Gestione notifiche progetti</h1>
+      <p>
+        Questa applicazione permette di attivare e disattivare le notifiche email per i progetti scolastici gestiti da Kevin Delugan.
+      </p>
+    </header>
+
+    <section aria-labelledby="funzioni-app">
+      <h2 id="funzioni-app">Come funziona</h2>
+      <ul>
+        <li>Accedi alla pagina <code>toggle.html</code> passando i parametri URL <code>stato</code>, <code>email</code> e <code>progetto</code>.</li>
+        <li>Quando <code>stato=on</code>, la mail inserita e il nome dell'account Google utilizzato per l'accesso vengono registrati in un foglio Google Fogli tramite un'automazione n8n, così da semplificare l'invio delle comunicazioni relative al progetto.</li>
+        <li>Quando <code>stato=off</code>, la mail viene contrassegnata come disiscritta per il progetto selezionato.</li>
+        <li>Per disiscriversi è sufficiente riaprire il link ricevuto e confermare lo stesso account Google con cui si era effettuata l'iscrizione.</li>
+        <li>La pagina mostra l'esito dell'operazione e si chiude automaticamente dopo pochi secondi.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="privacy-policy">
+      <h2 id="privacy-policy">Informativa Privacy</h2>
+      <p>Il trattamento dei dati personali raccolti attraverso l'applicazione avviene nel rispetto del Regolamento (UE) 2016/679 (GDPR) e della normativa nazionale vigente.</p>
+      <ul>
+        <li><strong>Titolare del trattamento:</strong> Kevin Delugan, contattabile all'indirizzo <a href="mailto:comunicazioni@rainerum.it">comunicazioni@rainerum.it</a>.</li>
+        <li><strong>Dati trattati:</strong> indirizzo email dell'utente e nome dell'account Google utilizzato per accedere al servizio.</li>
+        <li><strong>Finalità e base giuridica:</strong> inviare comunicazioni relative al progetto selezionato sulla base del consenso espresso dall'utente tramite l'attivazione delle notifiche.</li>
+        <li><strong>Modalità di trattamento:</strong> i dati vengono raccolti tramite un'automazione n8n e registrati in un foglio Google Fogli, strumenti gestiti direttamente dal titolare.</li>
+        <li><strong>Destinatari e trasferimenti:</strong> i dati possono essere trattati da Google LLC in qualità di fornitore del servizio Google Fogli; eventuali trasferimenti verso Paesi terzi avvengono nel rispetto delle garanzie offerte da Google (es. Clausole Contrattuali Standard).</li>
+        <li><strong>Periodo di conservazione:</strong> gli indirizzi email vengono eliminati al termine del progetto e, in ogni caso, entro la fine dell'anno scolastico di riferimento.</li>
+        <li><strong>Diritti degli interessati:</strong> gli utenti possono chiedere in qualsiasi momento l'accesso, la rettifica, la cancellazione, la limitazione del trattamento, la portabilità dei dati, opporsi al trattamento o revocare il consenso contattando il titolare a <a href="mailto:comunicazioni@rainerum.it">comunicazioni@rainerum.it</a>.</li>
+        <li><strong>Reclami:</strong> gli interessati hanno il diritto di proporre reclamo al Garante per la Protezione dei Dati Personali se ritengono che il trattamento violi la normativa applicabile.</li>
+        <li><strong>Disiscrizione:</strong> per revocare le notifiche è sufficiente utilizzare il link ricevuto e selezionare lo stesso account Google.</li>
+      </ul>
+    </section>
+  </body>
+</html>
